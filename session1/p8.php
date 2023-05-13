@@ -17,8 +17,15 @@
         $y = $x + $y; 
     }
 
-    test(); 
+    test();
+    echo $y;
 
+    echo "<br>";
+
+    function test2(){
+        $GLOBALS['y']= $GLOBALS['x']+$GLOBALS['y']; 
+    }
+    test2();
     echo $y;
 ?>
 </body>
