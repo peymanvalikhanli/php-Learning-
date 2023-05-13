@@ -12,6 +12,11 @@
     $color = "red"; 
     # print var of the color
     echo "<p> this is color = ". $color . "</p>";
+    /*
+    line 1
+    line 2
+    line 3 123456!@#$%^^&&*(()) zxcvbnmasdfghjklqwertyuiop
+    */
     ?>
 </body>
 </html>
