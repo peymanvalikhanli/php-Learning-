@@ -18,7 +18,9 @@
     }
 
     test();
+    echo "<br>";
     test();
+    echo "<br>";
     test();
     ?>
 </body>
