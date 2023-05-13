@@ -10,10 +10,16 @@
 
 <body>
     <?php
-    $color = "red";
-    echo "<p> this is color = " . $color . "</p>";
-    echo "<p> this is color = " . $Color . "</p>";
-    echo "<p> this is color = " . $colOr . "</p>";
+    function test()
+    {
+        static $x = 0;
+        echo $x;
+        $x++;
+    }
+
+    test();
+    test();
+    test();
     ?>
 </body>
 

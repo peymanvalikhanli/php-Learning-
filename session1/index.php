@@ -1,2 +1,2 @@
 <?php
-echo("Test App");
+echo ("Test App");
