@@ -17,6 +17,9 @@
         echo "str_word_count: <br>";
         print_r(str_word_count($text));
         echo "<br> <hr> <br>"; 
+        echo "strrev: <br>";
+        print_r(strrev($text));
+        echo "<br> <hr> <br>"; 
         
     ?>
 </body>
