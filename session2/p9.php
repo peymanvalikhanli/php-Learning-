@@ -21,6 +21,10 @@
     echo "<br>abs<br>";
     echo "-1<br>";
     echo abs(-1);
+    echo "<br>sqrt<br>";
+    echo "64<br>";
+    echo sqrt(64);
+    
     ?>
 </body>
 
