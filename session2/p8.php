@@ -54,6 +54,11 @@
     $x= 1.95;
     var_dump($x);
 
+    echo "<br> <h1>acos(8)</h1> <br>";
+
+    $x = acos(8); 
+    var_dump($x); 
+
     ?>
 </body>
 
