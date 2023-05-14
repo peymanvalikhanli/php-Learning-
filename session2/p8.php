@@ -10,20 +10,41 @@
 
 <body>
     <?php
+
+    echo "<br> <h1>check is int</h1> <br>";
+
     $num = 1234;
-    echo $num , "<br>"; 
+    echo $num, "<br>";
     var_dump(is_int($num));
 
     echo "<br>";
-    
+
     $num = 12.123;
-    echo $num , "<br>"; 
+    echo $num, "<br>";
     var_dump(is_int($num));
 
     echo "<br>";
     $num = "text";
-    echo $num , "<br>"; 
+    echo $num, "<br>";
     var_dump(is_int($num));
+
+    echo "<br> <h1>check is float</h1> <br>";
+
+    $num = 1234;
+    echo $num, "<br>";
+    var_dump(is_float($num));
+
+    echo "<br>";
+
+    $num = 12.123;
+    echo $num, "<br>";
+    var_dump(is_float($num));
+
+    echo "<br>";
+    $num = "text";
+    echo $num, "<br>";
+    var_dump(is_float($num));
+
     ?>
 </body>
 
