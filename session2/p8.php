@@ -45,6 +45,15 @@
     echo $num, "<br>";
     var_dump(is_float($num));
 
+    echo "<br> <h1>e</h1> <br>";
+
+    $x= 1.95e411;
+    var_dump($x);
+
+    
+    $x= 1.95;
+    var_dump($x);
+
     ?>
 </body>
 
