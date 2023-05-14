@@ -30,6 +30,12 @@
     echo "<br>round<br>";
     echo "1.4<br>";
     echo round(1.4);
+
+    echo "<br>rand<br>";
+    echo rand();
+    echo "<br>rand<br>";
+    echo rand(10,100);
+    
     
     ?>
 </body>
