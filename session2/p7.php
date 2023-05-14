@@ -26,7 +26,9 @@
         echo "strrev: <br>";
         var_dump(strpos($text,"test"));
         echo "<br> <hr> <br>"; 
-        
+        echo "str_replace: <br>";
+        var_dump(str_replace("PHP","Peyman",$text));
+        echo "<br> <hr> <br>"; 
         
     ?>
 </body>
