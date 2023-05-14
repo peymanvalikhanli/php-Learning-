@@ -59,6 +59,36 @@
     $x = acos(8); 
     var_dump($x); 
 
+    echo "<br> <h1>check is is_numeric</h1> <br>";
+
+    echo "1234","<br>";
+    $num = 1234;
+    echo $num, "<br>";
+    var_dump(is_numeric($num));
+
+    echo "<br>";
+    echo "12.123","<br>";
+    $num = 12.123;
+    echo $num, "<br>";
+    var_dump(is_numeric($num));
+    
+    echo "<br>";
+    echo "12.123","<br>";
+    $num = "12.123";
+    echo $num, "<br>";
+    var_dump(is_numeric($num));
+    echo "<br>";
+    echo "'12.123' + 100","<br>";
+    $num = "12.123" + 100;
+    echo $num, "<br>";
+    var_dump(is_numeric($num));
+
+    echo "<br>";
+    echo "'1234text'","<br>";
+    $num = "1234text";
+    echo $num, "<br>";
+    var_dump(is_numeric($num));
+
     ?>
 </body>
 
