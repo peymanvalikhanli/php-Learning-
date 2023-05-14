@@ -10,11 +10,11 @@
     <?php
     $arr = array("t1",123,123.456,true,false); 
 
-    var_dump($arr); 
+    //var_dump($arr); 
 
-    echo "<br><hr><br>"; 
+   // echo "<br><hr><br>"; 
 
-    //print_r($arr); 
+    print_r($arr); 
 
     ?>
 </body>
