@@ -11,9 +11,13 @@
         $text = "Hello My name is PHP"; 
         echo $text; 
         echo "<br> <hr> <br>"; 
-        echo "strlen : <br>";
+        echo "strlen: <br>";
         print_r(strlen($text));
         echo "<br> <hr> <br>"; 
+        echo "str_word_count: <br>";
+        print_r(str_word_count($text));
+        echo "<br> <hr> <br>"; 
+        
     ?>
 </body>
 </html>
