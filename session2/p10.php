@@ -10,6 +10,7 @@
     <?php
     
     define("val", "this is a const"); 
+    define("arr", ["this is a const",12,"test",true]); 
 
     define("Value", "this is a Value",false);
     
@@ -17,8 +18,11 @@
 
     echo "<br>";
 
+    echo Value;  
+
+    echo "<br>";
     
-    echo Value;
+    print_r(arr); 
     
 
     ?>
