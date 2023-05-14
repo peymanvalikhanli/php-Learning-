@@ -13,6 +13,10 @@
     define("arr", ["this is a const",12,"test",true]); 
 
     define("Value", "this is a Value",false);
+
+    function ppr(){
+        print_r(arr); 
+    }
     
     echo val;
 
@@ -21,8 +25,8 @@
     echo Value;  
 
     echo "<br>";
-    
-    print_r(arr); 
+    ppr(); 
+   
     
 
     ?>
