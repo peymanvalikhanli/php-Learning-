@@ -20,6 +20,13 @@
         echo "strrev: <br>";
         print_r(strrev($text));
         echo "<br> <hr> <br>"; 
+        echo "strpos: <br>";
+        print_r(strpos($text,"My"));
+        echo "<br> <hr> <br>"; 
+        echo "strrev: <br>";
+        var_dump(strpos($text,"test"));
+        echo "<br> <hr> <br>"; 
+        
         
     ?>
 </body>
