@@ -24,6 +24,12 @@
     echo "<br>sqrt<br>";
     echo "64<br>";
     echo sqrt(64);
+    echo "<br>round<br>";
+    echo "1.64<br>";
+    echo round(1.64);
+    echo "<br>round<br>";
+    echo "1.4<br>";
+    echo round(1.4);
     
     ?>
 </body>
