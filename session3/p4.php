@@ -27,4 +27,6 @@ while ($num <= $stop) {
     $num += 2;
 }
 
-print_r($data); 
+//print_r($data);
+
+echo json_encode($data); 

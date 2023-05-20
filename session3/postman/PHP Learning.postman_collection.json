@@ -38,6 +38,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get json data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/php-Learning-/session3/p4.php?act=even&num=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php-Learning-",
+								"session3",
+								"p4.php"
+							],
+							"query": [
+								{
+									"key": "act",
+									"value": "even"
+								},
+								{
+									"key": "num",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
