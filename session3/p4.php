@@ -29,4 +29,6 @@ while ($num <= $stop) {
 
 //print_r($data);
 
-echo json_encode($data); 
+$res = array("act" => "ok", "code" => "200", "data" => $data);
+
+echo json_encode($res);
