@@ -45,7 +45,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/php-Learning-/session3/p4.php?act=even&num=20",
+							"raw": "http://localhost/php-Learning-/session3/p4.php?act=even",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -62,12 +62,208 @@
 								},
 								{
 									"key": "num",
-									"value": "20"
+									"value": "20",
+									"disabled": true
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "get json data is OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/php-Learning-/session3/p4.php?act=even&num=20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"php-Learning-",
+										"session3",
+										"p4.php"
+									],
+									"query": [
+										{
+											"key": "act",
+											"value": "even"
+										},
+										{
+											"key": "num",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 20 May 2023 11:01:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"act\":\"ok\",\"code\":\"200\",\"data\":[0,2,4,6,8,10,12,14,16,18,20]}"
+						},
+						{
+							"name": "get json data does't have act",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/php-Learning-/session3/p4.php?num=20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"php-Learning-",
+										"session3",
+										"p4.php"
+									],
+									"query": [
+										{
+											"key": "act",
+											"value": "even",
+											"disabled": true
+										},
+										{
+											"key": "num",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 20 May 2023 11:02:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"act\":\"error\",\"code\":\"400\",\"message\":\"Ops!! plz enter act!!\"}"
+						},
+						{
+							"name": "get json data doesn't have num",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/php-Learning-/session3/p4.php?act=even",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"php-Learning-",
+										"session3",
+										"p4.php"
+									],
+									"query": [
+										{
+											"key": "act",
+											"value": "even"
+										},
+										{
+											"key": "num",
+											"value": "20",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 20 May 2023 11:02:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"act\":\"error\",\"code\":\"400\",\"message\":\"Ops!! plz enter num!!\"}"
+						}
+					]
 				}
 			]
 		}
