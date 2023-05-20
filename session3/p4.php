@@ -31,4 +31,5 @@ while ($num <= $stop) {
 
 $res = array("act" => "ok", "code" => "200", "data" => $data);
 
+// echo json_encode($data);
 echo json_encode($res);
