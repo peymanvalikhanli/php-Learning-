@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "6f0b4ba2-89c0-4711-bc13-0560e5c49235",
+		"name": "PHP Learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1648364"
+	},
+	"item": [
+		{
+			"name": "session3",
+			"item": [
+				{
+					"name": "send form",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/php-Learning-/session3/p3.php?act=even&num=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"php-Learning-",
+								"session3",
+								"p3.php"
+							],
+							"query": [
+								{
+									"key": "act",
+									"value": "even"
+								},
+								{
+									"key": "num",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
