@@ -10,9 +10,16 @@
     <?php
         $num = 1; 
         while($num <=5){
-            echo $num , "<br>"; 
-
+            echo $num , "<br>";  
             $num++; 
+        }
+
+        echo "<br><hr><br>"; 
+
+        $num = 0; 
+        while($num <=100){
+            echo $num , "<br>";  
+            $num+=10; 
         }
     ?>
 </body>
