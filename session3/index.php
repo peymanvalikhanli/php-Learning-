@@ -9,13 +9,15 @@
 <body>
     
 <?php 
-    $h = Date("H"); 
+    //$h = Date("H"); 
 
+    // $h =10; 
+    $h = 23;
 
     if($h < 20 ){
         echo "Have a good day";
     }else {
-        echo "have a good night!"
+        echo "have a good night!";
     }
 ?> 
 
