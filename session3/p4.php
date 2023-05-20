@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -17,6 +18,21 @@ if (isset($_REQUEST["act"])) {
 
 if (isset($_REQUEST["num"])) {
     $stop = $_REQUEST["num"];
+    if (!is_numeric($stop)) {
+        $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter number in num prameter!!");
+        echo json_encode($res);
+        exit;
+    }
+    if ($stop <= 0) {
+        $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter number > 0 in  num prameter!!");
+        echo json_encode($res);
+        exit;
+    }
+    if ($stop >= 1000) {
+        $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter number < 1000 in  num prameter!!");
+        echo json_encode($res);
+        exit;
+    }
 } else {
 
     $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter num!!");
