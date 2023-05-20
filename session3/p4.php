@@ -3,8 +3,30 @@
 
 // URL sample : http://localhost/php-Learning-/session3/p3.php?act=even&num=20
 
-$select = $_REQUEST["act"];
-$stop = $_REQUEST["num"];
+$select = null;
+$stop = null;
+
+if (isset($_REQUEST["act"])) {
+    $select = $_REQUEST["act"];
+} else {
+
+    $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter act!!");
+    echo json_encode($res);
+    exit;
+}
+
+if (isset($_REQUEST["num"])) {
+    $stop = $_REQUEST["num"];
+} else {
+
+    $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter num!!");
+    echo json_encode($res);
+    exit;
+}
+
+
+
+
 $num = 0;
 $data = array();
 $i = 0;
