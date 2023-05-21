@@ -9,12 +9,13 @@ $stop = null;
 
 if (isset($_REQUEST["act"])) {
     $select = $_REQUEST["act"];
+    $select = strtolower($select); 
     if($select != "odd" && $select != "even"){
         $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter act by 'odd' OR 'even'");
         echo json_encode($res);
         exit;
     }
-    
+
 } else {
 
     $res = array("act" => "error", "code" => "400", "message" => "Ops!! plz enter act!!");
