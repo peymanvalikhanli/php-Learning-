@@ -68,12 +68,24 @@ switch ($act) {
         $password = null;
         if (isset($_REQUEST["username"])) {
             $username = $_REQUEST["username"];
+            if($username == "" || $username == null){
+                error_message("you must enter Username.");
+            }
+            if(strlen($username)>= 20){
+                error_message("Username is not found!!!");
+            }
         } else {
             error_message("please Enter Username");
         }
 
         if (isset($_REQUEST["password"])) {
-            $username = $_REQUEST["password"];
+            $password = $_REQUEST["password"];
+            if($password == "" || $password == null){
+                error_message("you must enter Password.");
+            }
+            if(strlen($password) > 50 || strlen($password) < 6 ){
+                error_message("Password is not valid");
+            }
         } else {
             error_message("please Enter Password");
         }
