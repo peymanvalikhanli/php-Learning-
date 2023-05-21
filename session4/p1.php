@@ -1,40 +1,44 @@
-<?php 
+<?php
 
-function message(){
-    echo "hello"; 
+declare(strict_types=1);
+
+function message()
+{
+    echo "hello";
 }
 
-message(); 
+message();
 
-echo "<br>"; 
+echo "<br>";
 
-function show_name($name){
-    echo "this name is : $name"; 
+function show_name($name)
+{
+    echo "this name is : $name";
 }
 
 show_name("peyman");
 
 
-echo "<br>"; 
+echo "<br>";
 
-//declare(strict_types=1); 
 
-function sum(int $a , int $b){
-    return $a+$b; 
+function sum(int $a, int $b): int
+{
+    return $a + $b;
 }
 
 
 // echo sum(12,"test");
 // echo sum(12,12.5);
-//echo sum(12,12);
+echo sum(12, 12);
 
-echo "<br>"; 
+echo "<br>";
 
 
-function sum_one(int $a , int $b=10){
-    return $a+$b; 
+function sum_one(int $a, int $b = 10)
+{
+    return $a + $b;
 }
 
-echo sum_one(12,11),"<br>"; 
-echo sum_one(2),"<br>"; 
-
+echo sum_one(12, 11), "<br>";
+echo sum_one(2), "<br>";
