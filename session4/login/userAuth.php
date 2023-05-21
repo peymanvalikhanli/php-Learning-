@@ -16,6 +16,7 @@ if (isset($_REQUEST["act"])) {
     $act = strtolower($act);
 } else {
     echo "Ops!!! error enter action!!!!";
+    exit;
 }
 
 
