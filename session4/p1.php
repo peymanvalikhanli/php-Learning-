@@ -25,3 +25,5 @@ function sum(int $a , int $b){
 
 
 echo sum(12,"test");
+echo sum(12,12.5);
+echo sum(12,12);
