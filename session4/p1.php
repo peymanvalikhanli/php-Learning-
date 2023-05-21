@@ -42,3 +42,15 @@ function sum_one(int $a, int $b = 10)
 
 echo sum_one(12, 11), "<br>";
 echo sum_one(2), "<br>";
+
+echo "<br>";
+
+function test_ref(&$x){
+    $x++;
+}
+
+$num = 1; 
+echo $num , "<br>"; 
+test_ref($num); 
+echo $num; 
+
