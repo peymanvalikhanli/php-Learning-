@@ -68,10 +68,10 @@ switch ($act) {
         $password = null;
         if (isset($_REQUEST["username"])) {
             $username = $_REQUEST["username"];
-            if($username == "" || $username == null){
+            if ($username == "" || $username == null) {
                 error_message("you must enter Username.");
             }
-            if(strlen($username)>= 20){
+            if (strlen($username) >= 20) {
                 error_message("Username is not found!!!");
             }
         } else {
@@ -80,17 +80,25 @@ switch ($act) {
 
         if (isset($_REQUEST["password"])) {
             $password = $_REQUEST["password"];
-            if($password == "" || $password == null){
+            if ($password == "" || $password == null) {
                 error_message("you must enter Password.");
             }
-            if(strlen($password) > 50 || strlen($password) < 6 ){
+            if (strlen($password) > 50 || strlen($password) < 6) {
                 error_message("Password is not valid");
             }
         } else {
             error_message("please Enter Password");
         }
 
-        json_res($act, "ok");
+        foreach ($users as $user) {
+            //print_r( $user);exit; 
+            if ($user["username"] == $username && $user["pass"] == $password) {
+                json_res($act, "ok");
+            }
+        }
+
+        error_message("user not found", 403);
+
         break;
     case "forgot_pass":
         json_res($act, "ok");
