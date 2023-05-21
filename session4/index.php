@@ -20,3 +20,11 @@ $arr = array("a","b","c","d");
 foreach($arr as $v){
     echo "data : ", $v, "<br>"; 
 }
+
+echo "<hr><br>"; 
+
+$arr = array("name"=>"a","lastname"=>"b","age"=>"c","email"=>"d"); 
+
+foreach($arr as $z => $v){
+    echo $z, " : ", $v, "<br>"; 
+}
