@@ -11,9 +11,9 @@ check valid username
 //________________________ Data model
 
 $users = array(
-array("name"=>"Peyman", "lastname"=>"Valikhanli", "username"=>"peymanvali", "pass"=>"123456789","email"=>"info@valikhanli.info"),
-array("name"=>"Ali", "lastname"=>"Aliniya", "username"=>"ali", "pass"=>"123456789","email"=>"info@ali.info"),
-array("name"=>"Mahtab", "lastname"=>"Yosefi", "username"=>"mahtaby", "pass"=>"1234567","email"=>"info@mahtab.info"),
+    array("name" => "Peyman", "lastname" => "Valikhanli", "username" => "peymanvali", "pass" => "123456789", "email" => "info@valikhanli.info"),
+    array("name" => "Ali", "lastname" => "Aliniya", "username" => "ali", "pass" => "123456789", "email" => "info@ali.info"),
+    array("name" => "Mahtab", "lastname" => "Yosefi", "username" => "mahtaby", "pass" => "1234567", "email" => "info@mahtab.info"),
 );
 
 //________________________ functions
@@ -64,6 +64,20 @@ switch ($act) {
         json_res($act, $users);
         break;
     case "login":
+        $username = null;
+        $password = null;
+        if (isset($_REQUEST["username"])) {
+            $username = $_REQUEST["username"];
+        } else {
+            error_message("please Enter Username");
+        }
+
+        if (isset($_REQUEST["password"])) {
+            $username = $_REQUEST["password"];
+        } else {
+            error_message("please Enter Password");
+        }
+
         json_res($act, "ok");
         break;
     case "forgot_pass":
