@@ -38,3 +38,12 @@ for ($i = 0; $i <= 100; $i += 10) {
     }
     echo "index ", $i, "<br>";
 }
+
+echo "<hr><br>";
+
+for ($i = 0; $i <= 100; $i += 10) {
+    if($i == 40){
+        continue;
+    }
+    echo "index ", $i, "<br>";
+}
