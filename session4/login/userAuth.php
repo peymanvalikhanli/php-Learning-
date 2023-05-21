@@ -8,9 +8,21 @@ register
 check valid username 
 ...
 */
-function error_message($message, $code = 404)
+function error_message($message, $code = 400)
 {
-    header("HTTP/1.0 404 Not Found");
+    switch ($code) {
+        case 404:
+            header("HTTP/1.0 404 Not Found");
+            break;
+        case 403:
+            header("HTTP/1.0 403 Forbidden");
+            break;
+        case 400:
+        default:
+            header("HTTP/1.0 400 Bad Request");
+            break;
+    }
+    
     $res = array("act" => "error", "code" => $code, "message" => $message);
     echo json_encode($res);
     exit;
@@ -38,17 +50,17 @@ if (isset($_REQUEST["act"])) {
 
 switch ($act) {
     case "login":
-        json_res($act,"ok"); 
+        json_res($act, "ok");
         break;
     case "forgot_pass":
-        json_res($act,"ok"); 
+        json_res($act, "ok");
         break;
     case "register":
-        json_res($act,"ok"); 
+        json_res($act, "ok");
         break;
     case "check_valid_user":
-        json_res($act,"ok"); 
+        json_res($act, "ok");
         break;
     default:
-        error_message("this action not found!!");
+        error_message("this action not found!!", 404);
 }
