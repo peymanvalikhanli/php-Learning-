@@ -28,3 +28,13 @@ $arr = array("name" => "a", "lastname" => "b", "age" => "c", "email" => "d");
 foreach ($arr as $z => $v) {
     echo $z, " : ", $v, "<br>";
 }
+
+
+echo "<hr><br>";
+
+for ($i = 0; $i <= 100; $i += 10) {
+    if($i == 40){
+        break; 
+    }
+    echo "index ", $i, "<br>";
+}
