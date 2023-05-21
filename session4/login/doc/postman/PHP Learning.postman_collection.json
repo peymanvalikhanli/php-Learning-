@@ -425,7 +425,276 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost/php-Learning-/session4/login/userAuth.php?act=get_users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"path": [
+												"php-Learning-",
+												"session4",
+												"login",
+												"userAuth.php"
+											],
+											"query": [
+												{
+													"key": "act",
+													"value": "get_users"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 21 May 2023 11:10:27 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Content-Length",
+											"value": "354"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"act\": \"get_users\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"name\": \"Peyman\",\n            \"lastname\": \"Valikhanli\",\n            \"username\": \"peymanvali\",\n            \"pass\": \"123456789\",\n            \"email\": \"info@valikhanli.info\"\n        },\n        {\n            \"name\": \"Ali\",\n            \"lastname\": \"Aliniya\",\n            \"username\": \"ali\",\n            \"pass\": \"123456789\",\n            \"email\": \"info@ali.info\"\n        },\n        {\n            \"name\": \"Mahtab\",\n            \"lastname\": \"Yosefi\",\n            \"username\": \"mahtaby\",\n            \"pass\": \"1234567\",\n            \"email\": \"info@mahtab.info\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/php-Learning-/session4/login/userAuth.php?act=login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"php-Learning-",
+										"session4",
+										"login",
+										"userAuth.php"
+									],
+									"query": [
+										{
+											"key": "act",
+											"value": "login"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login act error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost/php-Learning-/session4/login/userAuth.php",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"path": [
+												"php-Learning-",
+												"session4",
+												"login",
+												"userAuth.php"
+											],
+											"query": [
+												{
+													"key": "act",
+													"value": "login",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 21 May 2023 11:17:36 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Content-Length",
+											"value": "68"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"act\":\"error\",\"code\":400,\"message\":\"Ops!!! error enter action!!!!\"}"
+								},
+								{
+									"name": "Login username error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost/php-Learning-/session4/login/userAuth.php?act=login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"path": [
+												"php-Learning-",
+												"session4",
+												"login",
+												"userAuth.php"
+											],
+											"query": [
+												{
+													"key": "act",
+													"value": "login"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 21 May 2023 11:17:53 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"act\":\"error\",\"code\":400,\"message\":\"please Enter Username\"}"
+								},
+								{
+									"name": "Login password error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost/php-Learning-/session4/login/userAuth.php?act=login&username",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"path": [
+												"php-Learning-",
+												"session4",
+												"login",
+												"userAuth.php"
+											],
+											"query": [
+												{
+													"key": "act",
+													"value": "login"
+												},
+												{
+													"key": "username",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 21 May 2023 11:18:21 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Content-Length",
+											"value": "60"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"act\":\"error\",\"code\":400,\"message\":\"please Enter Password\"}"
+								}
+							]
 						}
 					]
 				}
