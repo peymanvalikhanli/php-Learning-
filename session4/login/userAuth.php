@@ -8,6 +8,16 @@ register
 check valid username 
 ...
 */
+//________________________ Data model
+
+$users = array(
+array("name"=>"Peyman", "lastname"=>"Valikhanli", "username"=>"peymanvali", "pass"=>"123456789","email"=>"info@valikhanli.info"),
+array("name"=>"Ali", "lastname"=>"Aliniya", "username"=>"ali", "pass"=>"123456789","email"=>"info@ali.info"),
+array("name"=>"Mahtab", "lastname"=>"Yosefi", "username"=>"mahtaby", "pass"=>"1234567","email"=>"info@mahtab.info"),
+);
+
+//________________________ functions
+
 function error_message($message, $code = 400)
 {
     switch ($code) {
@@ -22,7 +32,7 @@ function error_message($message, $code = 400)
             header("HTTP/1.0 400 Bad Request");
             break;
     }
-    
+
     $res = array("act" => "error", "code" => $code, "message" => $message);
     echo json_encode($res);
     exit;
@@ -36,6 +46,7 @@ function json_res($act, $data, $code = 200)
 }
 
 //________________________
+
 $act = null;
 
 if (isset($_REQUEST["act"])) {
@@ -49,6 +60,9 @@ if (isset($_REQUEST["act"])) {
 
 
 switch ($act) {
+    case "get_users":
+        json_res($act, $users);
+        break;
     case "login":
         json_res($act, "ok");
         break;
