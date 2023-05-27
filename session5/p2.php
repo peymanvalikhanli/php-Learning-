@@ -7,4 +7,6 @@ $users = array(
     array("nasim","valikhanli",68,"nasimvalikhanli2012@gmail.com")
 );
 
-print_r($users); 
+//print_r($users);
+
+echo "username is ".$users[0][0]." ". $users[0][1]. ". He is ".$users[0][2]. " years old. email : ". $users[0][3]; 
