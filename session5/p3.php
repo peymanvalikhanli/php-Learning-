@@ -4,7 +4,11 @@
 // sort($numbers);
 // print_r($numbers); 
 
+// $text = array("aa","ab","b", "c", "z", "AC","AA", "a12","a11","a1","a2");
+// sort($text);
+// print_r($text); 
+
 $text = array("aa","ab","b", "c", "z", "AC","AA", "a12","a11","a1","a2");
-sort($text);
+rsort($text);
 print_r($text); 
 
