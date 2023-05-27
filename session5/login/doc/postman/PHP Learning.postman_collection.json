@@ -803,30 +803,36 @@
 						{
 							"name": "Login",
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "act",
+											"value": "login",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "peymanvali",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "{{baseurl}}/login/userAuth.php?act=login&username=peymanvali&password=1234567890",
+									"raw": "{{baseurl}}/login/userAuth.php",
 									"host": [
 										"{{baseurl}}"
 									],
 									"path": [
 										"login",
 										"userAuth.php"
-									],
-									"query": [
-										{
-											"key": "act",
-											"value": "login"
-										},
-										{
-											"key": "username",
-											"value": "peymanvali"
-										},
-										{
-											"key": "password",
-											"value": "1234567890"
-										}
 									]
 								}
 							},

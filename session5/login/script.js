@@ -36,26 +36,36 @@ const btn_login = () => {
         return;
     }
 
+    //___________________________________
+    var formdata = new FormData();
+    formdata.append("act", "login");
+    formdata.append("username", username);
+    formdata.append("password", password);
+
     var requestOptions = {
-        method: 'GET'
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
     };
 
-    fetch("http://localhost/php-Learning-/session5/login/userAuth.php?act=login&username="+username+"&password="+password, requestOptions)
+    //______________________________
+
+    fetch("http://localhost/php-Learning-/session5/login/userAuth.php", requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result);
-            switch(result.act){
+            switch (result.act) {
                 case "login":
-                    document.write("Hello "+ username); 
-                break; 
+                    document.write("Hello " + username);
+                    break;
 
                 case "error":
                     alert(result.message);
-                break; 
+                    break;
             }
         })
         .catch(error => {
-            console.log('error', error); 
+            console.log('error', error);
             alert("you have a error!!!");
         });
 }
