@@ -1103,7 +1103,7 @@
 							"script": {
 								"type": "text/javascript",
 								"exec": [
-									"pm.environment.set(\"user_url\", \"http://localhost/php-Learning-/session6/users\");"
+									"pm.environment.set(\"user_url\", \"http://localhost/php-Learning-/session6/users/index.php\");"
 								]
 							}
 						},
@@ -1120,21 +1120,42 @@
 				},
 				{
 					"name": "login",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseurl}}/login/userAuth.php",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"login",
-								"userAuth.php"
-							]
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{login_url}}",
+									"host": [
+										"{{login_url}}"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.environment.set(\"login_url\", \"http://localhost/php-Learning-/session6/login/\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
 				}
 			]
 		}
