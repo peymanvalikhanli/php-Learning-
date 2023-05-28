@@ -1124,8 +1124,23 @@
 						{
 							"name": "login",
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "peymanvali",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
 									"raw": "{{login_url}}",
 									"host": [
@@ -1133,7 +1148,130 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "login 403",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "username",
+													"value": "user",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{login_url}}",
+											"host": [
+												"{{login_url}}"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 28 May 2023 11:32:25 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Content-Length",
+											"value": "53"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"act\":\"error\",\"code\":403,\"message\":\"user not found\"}"
+								},
+								{
+									"name": "login OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "username",
+													"value": "peymanvali",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456789",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{login_url}}",
+											"host": [
+												"{{login_url}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 28 May 2023 11:33:09 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache/2.4.56 (Win64) OpenSSL/1.1.1t PHP/8.0.28"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Content-Length",
+											"value": "38"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\"act\":\"login\",\"code\":200,\"data\":\"ok\"}"
+								}
+							]
 						}
 					],
 					"event": [
