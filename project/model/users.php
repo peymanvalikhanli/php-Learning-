@@ -1,6 +1,5 @@
 <?php
 
-require_once("index.php");
 
 require_once("DB.php");
 
@@ -9,11 +8,22 @@ function get_users()
     return select_all("users");
 }
 
+function get_users_name()
+{
+    return select_all("users", "name as Name");
+}
+function get_users_name_lastname()
+{
+    return select_all("users", "name as Name , lastName as LastName");
+}
+
+
+
 function user_login($username, $password)
 {
-    $users = get_users();
+    $users = select("users", "username , password, token", "username like '$username'");
     foreach ($users as $user) {
-        if ($user["username"] == $username && $user["pass"] == $password) {
+        if ($user["username"] == $username && $user["password"] == $password) {
             return true;
         }
     }
