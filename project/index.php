@@ -1,7 +1,11 @@
-<?php 
+<?php
 
-require_once("model/users.php"); 
+require_once("model/users.php");
 
-$temp = user_login("admin","1234567890");  
 
-print_r($temp); 
+// $temp = get_users("admin");  
+// $temp = get_user_by_username("admin");  
+// $temp = get_user_by_token("123");  
+$temp = user_login("test67", "123123", "1234567");
+
+print_r($temp);
