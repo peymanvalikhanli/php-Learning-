@@ -2,6 +2,6 @@
 
 require_once("model/users.php"); 
 
-$temp = get_users();  
+$temp = user_login("admin","1234567890");  
 
 print_r($temp); 
