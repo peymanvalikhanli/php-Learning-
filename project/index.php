@@ -1,7 +1,7 @@
 <?php 
 
-require_once("model/DB.php"); 
+require_once("model/users.php"); 
 
-$temp = select_all("actions"); 
+$temp = get_users();  
 
 print_r($temp); 
