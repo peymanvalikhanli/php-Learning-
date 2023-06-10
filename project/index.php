@@ -1,3 +1,7 @@
 <?php 
 
-echo "home page"; 
+require_once("model/DB.php"); 
+
+$temp = select_all("actions"); 
+
+print_r($temp); 
