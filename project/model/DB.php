@@ -1,10 +1,10 @@
 <?php
 
+$DB_debug_mode = false;
+
 $DB_user = "php";
 $DB_pass = "123123$#@!";
 $DB_name = "iami";
-
-$DB_debug_mode = false;
 
 function check_connection($mysqli = null)
 {
@@ -43,7 +43,6 @@ function select_all($table)
     if ($DB_debug_mode)
         echo $result->num_rows;
 
-
     $row_count = $result->num_rows;
     // Free result set
     $result->free_result();
@@ -58,6 +57,7 @@ function select_all($table)
         array_push($data,$temp);
     }
 
+    // Free result set
     $result->free_result();
 
     $mysqli->close();
