@@ -1,6 +1,6 @@
 <?php
 
-$DB_debug_mode =    false;
+$DB_debug_mode = false;
 
 $DB_user = "php";
 $DB_pass = "123123$#@!";
@@ -225,7 +225,8 @@ function insert_by_array($table, $cols, $values)
     return $result;
 }
 
-function update($table, $col_value , $where = null){
+function update($table, $col_value, $where = null)
+{
     // UPDATE `users` SET `username` = 'user4', `lastLogin` = NULL WHERE `users`.`username` = 'user2';
 
     global $DB_user, $DB_pass, $DB_name, $DB_debug_mode;
@@ -236,23 +237,59 @@ function update($table, $col_value , $where = null){
 
     $sql = "UPDATE ";
 
-    if($table != null && $table != "" ){
-        $sql .= "`$table`"; 
-    }else{
-        return "error table name"; 
+    if ($table != null && $table != "") {
+        $sql .= "`$table`";
+    } else {
+        return "error table name";
     }
 
-    $sql .= " SET "; 
-    
-    if($col_value != null && $col_value != ""){
-        $sql .= $col_value; 
-    }else{
-        return "error col value"; 
+    $sql .= " SET ";
+
+    if ($col_value != null && $col_value != "") {
+        $sql .= $col_value;
+    } else {
+        return "error col value";
     }
 
-    if($where != null && $where != ""){
-        $sql .= " WHERE "; 
-        $sql .= $where; 
+    if ($where != null && $where != "") {
+        $sql .= " WHERE ";
+        $sql .= $where;
+    }
+
+    if ($DB_debug_mode) {
+        echo $sql;
+        exit;
+    }
+
+    mysqli_query($con, $sql);
+    $result = mysqli_affected_rows($con);
+
+    mysqli_close($con);
+
+    return $result;
+}
+
+function delete($table, $where = null)
+{
+    // DELETE FROM `users` WHERE 0
+
+    global $DB_user, $DB_pass, $DB_name, $DB_debug_mode;
+
+    $con = mysqli_connect("localhost", $DB_user, $DB_pass, $DB_name);
+
+    check_connection();
+
+    $sql = "DELETE FROM ";
+
+    if ($table != null && $table != "") {
+        $sql .= "`$table`";
+    } else {
+        return "error table name";
+    }
+
+    if ($where != null && $where != "") {
+        $sql .= " WHERE ";
+        $sql .= $where;
     }
 
     if ($DB_debug_mode) {

@@ -85,3 +85,8 @@ function user_update_username(){
     $res = update("users","`username` = 'user5'"," `users`.`username` = 'user4'");
     return $res; 
 }
+
+function user_delete($username) {
+    $res = delete("users", "`users`.`username` = '$username'");
+    return $res; 
+}

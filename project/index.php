@@ -9,6 +9,7 @@ require_once("model/users.php");
 // $temp = user_login("test67", "123123", "1234567");
 // $temp = user_register(); 
 // $temp = insert_user(); 
-$temp = user_update_username(); 
+// $temp = user_update_username(); 
+$temp = user_delete("test67"); 
 
 var_dump($temp);
