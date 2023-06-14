@@ -127,13 +127,11 @@ function select($table, $cols = null, $where = null)
 
 function insert($table, $cols, $values)
 {
-
     global $DB_user, $DB_pass, $DB_name, $DB_debug_mode;
 
     $con = mysqli_connect("localhost", $DB_user, $DB_pass, $DB_name);
 
     check_connection();
-
 
     $sql = "INSERT INTO ";
 
@@ -157,7 +155,6 @@ function insert($table, $cols, $values)
 
     mysqli_query($con, $sql);
     $result = mysqli_affected_rows($con);
-
 
     mysqli_close($con);
 
