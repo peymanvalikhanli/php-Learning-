@@ -91,8 +91,8 @@ function select($table, $cols = null, $where = null)
         $sql .= " where " . $where;
     }
 
-    if($DB_debug_mode)
-        echo $sql; 
+    if ($DB_debug_mode)
+        echo $sql;
 
     $result = $mysqli->query($sql);
 
@@ -123,4 +123,43 @@ function select($table, $cols = null, $where = null)
 
     $mysqli->close();
     return $data;
+}
+
+function insert($table, $cols, $values)
+{
+
+    global $DB_user, $DB_pass, $DB_name, $DB_debug_mode;
+
+    $con = mysqli_connect("localhost", $DB_user, $DB_pass, $DB_name);
+
+    check_connection();
+
+
+    $sql = "INSERT INTO ";
+
+    if ($table != null && $table != "") {
+        $sql .= "`$table` ";
+    } else {
+        return "error tabble name";
+    }
+
+    if ($cols != null && $cols != "") {
+        $sql .= "($cols) ";
+    } else {
+        return "error cols name";
+    }
+
+    if ($values != null && $values != "") {
+        $sql .= "values ($values)";
+    } else {
+        return "error values";
+    }
+
+    mysqli_query($con, $sql);
+    $result = mysqli_affected_rows($con);
+
+
+    mysqli_close($con);
+
+    return $result; 
 }
