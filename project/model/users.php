@@ -2,8 +2,6 @@
 
 require_once("DB.php");
 
-
-
 function get_users()
 {
     return select_all("users");
@@ -75,10 +73,15 @@ function insert_user()
     $cols = array( 
         "`username`","token", "name", "lastName", "email", "emailVerify", "mobile", "mobileVerify", "password", "passError", "otpCode", "otpStatusID", "capchaCode", "lastLogin", "statusID", "createdBy", "creariationDate", "modifyDate"
     );
-
     $values = array(
         "'user2'", "' 12'", "'user2'", "'users2'", "'user12@user.com'", "'0'", "'0936896543'", "'0'", "'123789'", "'0'", "'1234'", "'1'", "'1234'", "NULL", "'1'", "'system'", "current_timestamp()", "current_timestamp()"
     );
     $res = insert_by_array("users", $cols, $values);
     return $res;
+}
+
+function user_update_username(){
+    // UPDATE `users` SET `username` = 'user4', `lastLogin` = NULL WHERE `users`.`username` = 'user2';
+    $res = update("users","`username` = 'user5'"," `users`.`username` = 'user4'");
+    return $res; 
 }
