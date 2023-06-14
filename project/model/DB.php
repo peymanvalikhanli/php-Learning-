@@ -153,10 +153,74 @@ function insert($table, $cols, $values)
         return "error values";
     }
 
+    if ($DB_debug_mode) {
+        echo $sql;
+        exit;
+    }
+
     mysqli_query($con, $sql);
     $result = mysqli_affected_rows($con);
 
     mysqli_close($con);
 
-    return $result; 
+    return $result;
+}
+
+function insert_by_array($table, $cols, $values)
+{
+    global $DB_user, $DB_pass, $DB_name, $DB_debug_mode;
+
+    $con = mysqli_connect("localhost", $DB_user, $DB_pass, $DB_name);
+
+    check_connection();
+
+    $sql = "INSERT INTO ";
+
+    if (count($cols) != count($values)) {
+        return "error cols and values not match";
+    }
+
+    if ($table != null && $table != "") {
+        $sql .= "`$table` ";
+    } else {
+        return "error tabble name";
+    }
+
+    if ($cols != null && $cols != "" && count($cols) >= 0) {
+        $sql .= "(";
+        for ($index = 0; $index < count($cols); $index++) {
+            $sql .= "`" . $cols[$index] . "`";
+            if ($index < count($cols) - 1) {
+                $sql .= ",";
+            }
+        }
+        $sql .= ")";
+    } else {
+        return "error cols name";
+    }
+
+    if ($values != null && $values != "" && count($values) >= 0) {
+        $sql .= "values (";
+        for ($index = 0; $index < count($values); $index++) {
+            $sql .= $values[$index];
+            if ($index < count($values) - 1) {
+                $sql .= ",";
+            }
+        }
+        $sql .= ")";
+    } else {
+        return "error values";
+    }
+
+    if ($DB_debug_mode) {
+        echo $sql;
+        exit;
+    }
+
+    mysqli_query($con, $sql);
+    $result = mysqli_affected_rows($con);
+
+    mysqli_close($con);
+
+    return $result;
 }
