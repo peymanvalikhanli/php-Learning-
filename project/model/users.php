@@ -60,11 +60,11 @@ function user_login($username, $password, $otp = null)
     return false;
 }
 
-function user_register()
+function user_register($username, $name, $lastName, $email, $mobile, $password)
 {
-    // INSERT INTO `users` (`username`, `token`, `name`, `lastName`, `email`, `emailVerify`, `mobile`, `mobileVerify`, `password`, `passError`, `otpCode`, `otpStatusID`, `capchaCode`, `lastLogin`, `statusID`, `createdBy`, `creariationDate`, `modifyDate`) VALUES ('user', ' 1', 'user1', 'users', 'user1usercom', '0', '0936896542', '0', '123789', '0', '1234', '1', '1234', NULL, '1', 'system', current_timestamp(), current_timestamp());
-
-    $res =  insert("users", "`username`, `token`, `name`, `lastName`, `email`, `emailVerify`, `mobile`, `mobileVerify`, `password`, `passError`, `otpCode`, `otpStatusID`, `capchaCode`, `lastLogin`, `statusID`, `createdBy`, `creariationDate`, `modifyDate`", "'user2', ' 12', 'user2', 'users2', 'user12@user.com', '0', '0936896543', '0', '123789', '0', '1234', '1', '1234', NULL, '1', 'system', current_timestamp(), current_timestamp()");
+    
+    $res =  insert("users", "`username`, `token`, `name`, `lastName`, `email`, `emailVerify`, `mobile`, `mobileVerify`, `password`, `passError`, `otpCode`, `otpStatusID`, `capchaCode`, `lastLogin`, `statusID`, `createdBy`, `creariationDate`, `modifyDate`",
+                     "'$username', ' 12', '$name', '$lastName', '$email', '0', '$mobile', '0', '$password', '0', '', '1', '', NULL, '1', 'php', current_timestamp(), current_timestamp()");
     return $res;
 }
 
