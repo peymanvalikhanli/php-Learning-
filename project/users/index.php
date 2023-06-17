@@ -43,7 +43,11 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         } else {
             error_message("you must send password", 400);
         }
+        try{
         $res = user_register($username, $name, $lastname, $email, $mobile, $password);
+        }catch(Exception $e){
+            error_message($e, 400);
+        }
         if ($res  == 1) {
             json_res("new_user", "OK");
         } else {
