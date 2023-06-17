@@ -13,13 +13,11 @@ function check_connection($mysqli = null)
     if ($mysqli == null) {
         $con = mysqli_connect("localhost", $DB_user, $DB_pass, $DB_name);
         if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
+            throw new Exception("Failed to connect to MySQL: " . mysqli_connect_error(), 1);
         }
     } else {
         if ($mysqli->connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-            exit();
+            throw new Exception("Failed to connect to MySQL: " . $mysqli->connect_error, 1);
         }
     }
 }
@@ -138,19 +136,25 @@ function insert($table, $cols, $values)
     if ($table != null && $table != "") {
         $sql .= "`$table` ";
     } else {
-        return "error tabble name";
+        throw new Exception("error tabble name", 1);
+        
+        //return "error tabble name";
     }
 
     if ($cols != null && $cols != "") {
         $sql .= "($cols) ";
     } else {
-        return "error cols name";
+        throw new Exception("error cols name", 1);
+        
+        //return "error cols name";
     }
 
     if ($values != null && $values != "") {
         $sql .= "values ($values)";
     } else {
-        return "error values";
+        throw new Exception("error values", 1);
+        
+        //return "error values";
     }
 
     if ($DB_debug_mode) {
@@ -177,13 +181,17 @@ function insert_by_array($table, $cols, $values)
     $sql = "INSERT INTO ";
 
     if (count($cols) != count($values)) {
-        return "error cols and values not match";
+        throw new Exception("error cols and values not match", 1);
+        
+        // return "error cols and values not match";
     }
 
     if ($table != null && $table != "") {
         $sql .= "`$table` ";
     } else {
-        return "error tabble name";
+        throw new Exception("error tabble name", 1);
+        
+        // return "error tabble name";
     }
 
     if ($cols != null && $cols != "" && count($cols) >= 0) {
@@ -196,7 +204,9 @@ function insert_by_array($table, $cols, $values)
         }
         $sql .= ")";
     } else {
-        return "error cols name";
+        throw new Exception("error cols name", 1);
+        
+        // return "error cols name";
     }
 
     if ($values != null && $values != "" && count($values) >= 0) {
@@ -209,7 +219,9 @@ function insert_by_array($table, $cols, $values)
         }
         $sql .= ")";
     } else {
-        return "error values";
+        throw new Exception("error values", 1);
+        
+        // return "error values";
     }
 
     if ($DB_debug_mode) {
@@ -240,7 +252,9 @@ function update($table, $col_value, $where = null)
     if ($table != null && $table != "") {
         $sql .= "`$table`";
     } else {
-        return "error table name";
+        throw new Exception("error table name", 1);
+        
+        // return "error table name";
     }
 
     $sql .= " SET ";
@@ -248,7 +262,9 @@ function update($table, $col_value, $where = null)
     if ($col_value != null && $col_value != "") {
         $sql .= $col_value;
     } else {
-        return "error col value";
+        throw new Exception("error col value", 1);
+        
+        // return "error col value";
     }
 
     if ($where != null && $where != "") {
@@ -284,7 +300,9 @@ function delete($table, $where = null)
     if ($table != null && $table != "") {
         $sql .= "`$table`";
     } else {
-        return "error table name";
+        throw new Exception("error table name", 1);
+        
+        // return "error table name";
     }
 
     if ($where != null && $where != "") {
