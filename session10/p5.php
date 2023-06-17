@@ -1,7 +1,7 @@
 <?php
 $cookie_name = "name";
-$cookie_value = "peyman";
-setcookie($cookie_name, $cookie_value, time() + (86400 + 30), "/");
+$cookie_value = "";
+setcookie($cookie_name, $cookie_value, time() -300, "/");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 + 30), "/");
         if (isset($_COOKIE["name"]))
             echo $_COOKIE["name"];
         else
-            echo "";
+            echo "not set data";
         ?>
     </h1>
 </body>

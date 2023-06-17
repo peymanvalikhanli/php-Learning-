@@ -1,6 +1,6 @@
 <?php
 $cookie_name = "name";
-$cookie_value = "peyman";
+$cookie_value = "ali";
 setcookie($cookie_name, $cookie_value, time() + (86400 + 30), "/");
 ?>
 <!DOCTYPE html>
