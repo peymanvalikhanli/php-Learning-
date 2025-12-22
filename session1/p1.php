@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <h1>test App<h1>
-            <?php
-            echo "Hello world";
+    <h1>test App</h1>
+    <?php
+    echo "Hello world";
 
-            ?>
+    ?>
 </body>
 
 </html>
